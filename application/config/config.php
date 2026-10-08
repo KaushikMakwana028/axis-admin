@@ -21,7 +21,6 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 |
 | If you need to allow multiple domains, remember that this file is still
 | a PHP script and you can easily do that on your own.
-|
 */
 $config['base_url'] = 'http://localhost/kaushik/axis/';
 
@@ -35,7 +34,7 @@ $config['base_url'] = 'http://localhost/kaushik/axis/';
 | variable so that it is blank.
 |
 */
-$config['index_page'] = 'index.php';
+$config['index_page'] = '';
 
 /*
 |--------------------------------------------------------------------------
@@ -326,7 +325,7 @@ $config['cache_query_string'] = FALSE;
 | https://codeigniter.com/userguide3/libraries/encryption.html
 |
 */
-$config['encryption_key'] = '';
+$config['encryption_key'] = 'axis_system_secret_key_9874563210_token_encryption';
 
 /*
 |--------------------------------------------------------------------------
@@ -384,12 +383,12 @@ $config['encryption_key'] = '';
 |
 */
 $config['sess_driver'] = 'files';
-$config['sess_cookie_name'] = 'ci_session';
+$config['sess_cookie_name'] = 'axis_session';
 $config['sess_samesite'] = 'Lax';
-$config['sess_expiration'] = 7200;
-$config['sess_save_path'] = NULL;
+$config['sess_expiration'] = 31536000; // 1 year (permanent session so admin stays logged in)
+$config['sess_save_path'] = sys_get_temp_dir();
 $config['sess_match_ip'] = FALSE;
-$config['sess_time_to_update'] = 300;
+$config['sess_time_to_update'] = 86400;
 $config['sess_regenerate_destroy'] = FALSE;
 
 /*
